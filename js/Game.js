@@ -36,6 +36,8 @@ class Game {
 
         //Store Active Phrase
         this.activePhrase = phrase; //save phrase class to activePhrase in Game Property
+
+        activeGame = true; //track game status for keypress
     };
 
     //Function: Checks to see if the word has been revealed & wins game if it has
@@ -71,13 +73,8 @@ class Game {
         }
     };
 
-    /**
-    * Displays game over message
-    * @param {boolean} gameWon - Whether or not the user won the game
-    */
     //function: true/false, activates/updates overlay screen to win/loss
     gameOver(gameWon) {
-        console.log(gameWon)
         //Hide Start Screen
         const startScreen = document.getElementById('overlay');
         startScreen.removeAttribute('style');
@@ -85,12 +82,16 @@ class Game {
         if(gameWon) { //if won
             startScreen.className = 'win';
             startScreen.children[1].textContent = `You Won!  The Phase was: ${this.activePhrase.phrase}`
+            confettiDrop(50);
         } else {  //if lost
             startScreen.className = 'lose';
             startScreen.children[1].textContent = `You Lost.  The Phase was: ${this.activePhrase.phrase}`
         }
         //update button to Play Again
         startScreen.children[2].textContent = 'Play Again'
+
+        //disallow keypress events
+        activeGame = false;
     }
 
     //function: change keyboard based on correct/incorrect letter choice
@@ -132,5 +133,9 @@ class Game {
             keyboardButton[i].disabled = false;
             keyboardButton[i].className = 'key';
         }
+
+        //reset Confetti
+        confettiDrop(0)
     }
+
 }
