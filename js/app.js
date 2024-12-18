@@ -34,6 +34,7 @@ overlayButton.addEventListener('click', (e) => {
     game = new Game();  
     game.startGame() //run game func to hide overlay and setup phrase
     console.log(game.activePhrase.phrase) // Cheat: Shows phrase in console
+    stopTextAnimation()
 })
 
 //Listener: Add listener to each keyboard button. Triggers handleInteraction func
@@ -56,3 +57,29 @@ document.addEventListener('keydown', (e) => {
         }
     }
 });
+
+//Extra Credit: Animate Header Text for fun
+    const titleLetter = document.getElementsByClassName('titletext')
+    let intervalId = setInterval(animateLetter, 1000);   //start interval
+
+    // Function: stop the interval
+    function stopTextAnimation() {
+        clearInterval(intervalId);
+        for (let i = 0; i < titleLetter.length; i++) {
+            titleLetter[i].classList.remove('animateletter');
+        }
+    }
+
+    // Function: animate a letter
+    function animateLetter() {
+        // Remove 'animateletter' from previous letters
+        for (let i = 0; i < titleLetter.length; i++) {
+            titleLetter[i].classList.remove('animateletter');
+        }
+        // Add class to a random letter
+        const randomTitleLetter = Math.floor(Math.random() * titleLetter.length);
+        titleLetter[randomTitleLetter].classList.add('animateletter');
+    }
+
+
+

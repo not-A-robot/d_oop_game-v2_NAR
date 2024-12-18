@@ -8,11 +8,13 @@ class Game {
     constructor() {
         this.missed = 0;
         this.phrases = [
-            'i like cats', 
-            'cats are cute', 
-            'cats say meow', 
-            'wetfood rules', 
-            'sleep all day'
+            'promises kept', 
+            'callback that function', 
+            'scope creeper', 
+            'closure encounter', 
+            'eventful timing',
+            'null and void',
+            'youre classless'
         ];
         this.activePhrase = null;
     }; 
@@ -75,26 +77,27 @@ class Game {
 
     //function: true/false, activates/updates overlay screen to win/loss
     gameOver(gameWon) {
-        //Hide Start Screen
+        //Show Start Screen
         const startScreen = document.getElementById('overlay');
         startScreen.removeAttribute('style');
 
-        if(gameWon) { //if won
+        if(gameWon) { //Extra Credit: if won update startscreen text
             startScreen.className = 'win';
             startScreen.children[1].textContent = `You Won!  The Phase was: ${this.activePhrase.phrase}`
-            confettiDrop(50);
-        } else {  //if lost
+            confettiDrop(50); //start confetti
+
+        } else {  //if lost update startscreen text
             startScreen.className = 'lose';
             startScreen.children[1].textContent = `You Lost.  The Phase was: ${this.activePhrase.phrase}`
         }
-        //update button to Play Again
+        //Extra Credit: update button to Play Again
         startScreen.children[2].textContent = 'Play Again'
 
         //disallow keypress events
         activeGame = false;
     }
 
-    //function: change keyboard based on correct/incorrect letter choice
+    //function: change keyboard letters based on correct/incorrect letter choice
     handleInteraction(button) {
         const buttonLetter = button.textContent  //isolate the letter itself
         if(game.activePhrase.checkLetter(buttonLetter)){   //if letter is in phrase
@@ -134,7 +137,7 @@ class Game {
             keyboardButton[i].className = 'key';
         }
 
-        //reset Confetti
+        //extra: reset Confetti
         confettiDrop(0)
     }
 

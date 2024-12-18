@@ -1,4 +1,5 @@
 //Extra Credit: Making the Project Your Own
+//copied from: https://codepen.io/jonathanbell/pen/OvYVYw
 
 function confettiDrop(volume){
         let W = window.innerWidth;

@@ -10,7 +10,7 @@
   --color-neutral: #445069;
   --color-neutral-light: #D2D2D2;
   --color-keys: #37474F;
-  --color-keys-light: #E5E5E5;
+  --color-keys-light:#E5E5E5;
   --font-size-large: 60px;
   --font-size-medium: 20px;
   --transition: all .2s ease-in-out;
@@ -20,7 +20,7 @@
 
 * {
   box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'arial', sans-serif;
 }
 
 body {
@@ -35,6 +35,15 @@ li, ol, ul {
   display: inline-block;
 }
 
+h3 {
+  color: #3a3f58;
+  padding: 10px;
+  border: #3a3f58 1px solid;
+  margin: 0px 25%;
+  text-align: center;
+  border-radius: 8px;
+  background: white;
+}
 h2 {
   margin: 0;
   text-transform: uppercase;
@@ -52,7 +61,7 @@ button {
   padding: .5rem 1rem;
   color: var(--color-keys);
   font-size: var(--font-size-medium);
-  background-color: var(--color-keys-light);
+  background-color: white;
   border-radius: 5px;
   -webkit-transition: var(--transition);
   -o-transition: var(--transition);
@@ -72,6 +81,7 @@ button {
   height: 100%;
   max-height: 900px;
   text-align: center;
+  background: antiquewhite;
 }
 
 .section {
@@ -99,7 +109,7 @@ button {
   padding: 20px 1px 0 1px;
   margin-right: 2px;
   color: transparent;
-  background: var(--color-neutral-light);
+  background: white;
   border-radius: 5px;
 }
 
@@ -175,9 +185,7 @@ button {
   border-radius: 5px;
 }
 
-.title {
-  color: #FFF;
-}
+
 
 .start {
   background-color: #3a3f58;
@@ -209,4 +217,49 @@ canvas {
   margin: 0;
   z-index: -1;
   position: absolute;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.title-word{
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  flex-wrap: wrap;
+  margin: 10px;
+}
+
+.titletext {
+  font-size: clamp(1rem, 6vw, 3rem);
+  aspect-ratio: 1 / 1; /* Ensures the box is square */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid white;
+  border-radius: 5px;
+  background-color: transparent;
+  color: white;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 0px 10px;
+}
+
+.animateletter {
+  background-color:rgb(255, 255, 255);
+  color: #3a3f58;
+}
+
+div#qwerty {
+  border: darkgray 1px solid;
+  padding: 50px 40px;
+  background: #5b85b7;
+  border-radius: 10px;
+  width: 600px;
+  display: block;
+  margin: 0 auto;
+  max-width: fit-content;
 }
