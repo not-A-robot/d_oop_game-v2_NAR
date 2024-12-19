@@ -1,4 +1,4 @@
-Additional CSS
+Extra Credit: Additional CSS
 
 1. Change button Text based on start, win or lose
     Initial: Start Game
@@ -22,4 +22,9 @@ Additional CSS
     
     I utilized the same functionality as in the game; like generating a random number to index the letters and looping through different letters in the html.
 
-6.  Created a box around the keyboard to give it more of a keyboard feel
+
+6.  Guessing page
+    Added a Theme: Javascript Puns
+    Changed buttons to white
+    Created a box around the keyboard to give it more of a keyboard feel
+    Added color to the background

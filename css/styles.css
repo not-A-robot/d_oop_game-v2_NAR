@@ -111,6 +111,7 @@ button {
   color: transparent;
   background: white;
   border-radius: 5px;
+  border: 1px solid #3a3f58;
 }
 
 .space {
